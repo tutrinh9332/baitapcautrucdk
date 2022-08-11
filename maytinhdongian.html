@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+
+</head>
+<style>
+    button{
+    width: 100%;}
+ table {
+     border: 1px black solid;}
+  </style>
+<body>
+ <table>
+     <tr>
+         <td colspan="4"><input type="text" size="20" id="show"></td>
+     </tr>
+     <tr>
+         <td><button type="button" value="1" onclick="nut(1)">1</button> </td>
+         <td><button type="button" value="2" onclick="nut(2)">2</button> </td>
+         <td><button type="button" value="3" onclick="nut(3)">3</button> </td>
+         <td><button type="button" value="+" onclick="nut('+')">+</button> </td>
+     </tr>
+     <tr>
+         <td><button type="button" value="4" onclick="nut(4)">4</button> </td>
+         <td><button type="button" value="5" onclick="nut(5)">5</button> </td>
+         <td><button type="button" value="6" onclick="nut(6)">6</button> </td>
+         <td><button type="button" value="-" onclick="nut('-')">-</button> </td>
+     </tr>
+     <tr>
+         <td><button type="button" value="7" onclick="nut(7)">7</button> </td>
+         <td><button type="button" value="8" onclick="nut(8)">8</button> </td>
+         <td><button type="button" value="9" onclick="nut(9)">9</button> </td>
+         <td><button type="button" value="*" onclick="nut('*')">*</button> </td>
+     </tr>
+     <tr>
+         <td><button type="button" value="C" onclick="reset()">C</button> </td>
+         <td><button type="button" value="0" onclick="nut(0)">0</button> </td>
+         <td><button type="button" value="=" onclick="ketqua()">=</button> </td>
+         <td><button type="button" value="/" onclick="('/')">/</button> </td>
+     </tr>
+ </table>
+<script>
+    function nut(number){
+        document.getElementById("show").value += number;
+    }
+    function ketqua(){
+        let pt=document.getElementById("show").value;
+        let ketqua = eval(pt);
+        document.getElementById("show").value = ketqua;
+    }
+    function reset(){
+        location.reload();
+    }
+</script>
+</body>
+</html>

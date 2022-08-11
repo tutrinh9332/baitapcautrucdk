@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính chỉ số cân năng</title>
+</head>
+<body>
+<h2>Tính chỉ số cân năng</h2>
+<table>
+  <tr>
+    <td >Nhập cân năng: (kg)</td>
+    <td><input type="text" name="cân nặng" size="20px" id="cn"></td>
+  </tr>
+  <tr>
+    <td >Nhập chiều cao: (m)</td>
+    <td><input type="text" name="chiều cao" size="20px" id="cc"></td>
+  </tr>
+  <tr>
+    <td><input type="submit" value="Kiểm tra" onclick="check()"></td>
+  </tr>
+  <tr id="show"></tr>
+</table>
+<script>
+  function check() {
+    let cannang = document.getElementById("cn").value;
+    let chieucao = document.getElementById("cc").value;
+    let bmi = cannang/(chieucao*chieucao);
+    if (bmi < 0)
+      document.getElementById("show").innerText = "Nhập lại ";
+    else if (bmi < 18)
+      document.getElementById("show").innerText = "Gầy quá";
+    else if (bmi < 25.0)
+      document.getElementById("show").innerText = "Bình thường"
+    else if (bmi < 30.0)
+      document.getElementById("show").innerText = "Thừa cân"
+    else
+      document.getElementById("show").innerText = "Béo phì"
+  }
+
+</script>
+</body>
+</html>
